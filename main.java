@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 /* 
- * Reads the .sql.gz files containing Wikipedia's page metadata and page liks (or the cached raw data), writes out raw versions of the
+ * Reads the .sql.gz files containing Wikipedia's page metadata and page links (or the cached raw data), writes out raw versions of the
  * parsed data (for faster processing next time), iteratively computes the PageRank of each page, and writes out the raw PageRank vector.
  */
 public final class main {
@@ -96,6 +96,9 @@ public final class main {
 					break;
 				}
 			}
+		}
+		for(int i = 0; i < 10; i++){
+			System.out.printf("%s%n：%.2f", titleById.get(i),  Math.log10(pageranks[i]) );// スコアの上位10位のデータが表示
 		}
 	}
 	
