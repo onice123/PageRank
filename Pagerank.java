@@ -99,8 +99,8 @@ final class Pagerank {
 		}
 		bias /= activePages;
 		
-		// 傾向 and damping to all active pages適応する
-		double temp = bias * damping + (1 - damping) / activePages;  // Factor out some arithmetic　いくつかの演算を取り除く
+		// 傾向とdampingを全てのアクティブページに適応する
+		double temp = bias * damping + (1 - damping) / activePages;  // いくつかの演算を取り除く
 		for (int i = 0; i < idLimit; i++) {
 			if (isActive[i])
 				pageranks[i] = newPageranks[i] * damping + temp;
